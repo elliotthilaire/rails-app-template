@@ -17,3 +17,11 @@ generate :model, "email_address email_address:string:uniq user:uuid:references"
 # Create index controller
 generate :controller, "welcome index"
 route "root to: 'welcome#index'"
+
+append_to_file ".gitignore" do
+".envrc"
+end
+
+file '.envrc', <<-CODE
+#export KEY=value
+CODE
